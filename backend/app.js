@@ -2,7 +2,7 @@
 const createError = require('http-errors');
 const express = require('express');
 const app = express();
-require('dotenv').config({path: '/Users/markaigbe/College/Osaren_Project/.env'});
+require('dotenv').config({path: 'G:/College/Year4/Osaren_Project/.env'});
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
@@ -13,8 +13,10 @@ require('../backend/bin/connMongo')
 
 
 // routes
-const indexRouter = require('./routes/index')
-const usersRouter = require('./routes/users')
+const indexRoute = require('./routes/index')
+const usersRoute = require('./routes/users')
+const postRoute = require('./routes/post')
+const commentRoute = require('./routes/comment')
 
 // white listed url for frontend (localhost 3000)
 const whitelist = process.env.WHITELISTED_DOMAINS
@@ -40,8 +42,10 @@ app.use(methodOverride('_method'))
 
 
 // use routes here ------
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', indexRoute);
+app.use('/users', usersRoute);
+app.use('/posts', postRoute)
+app.use('/comments', commentRoute)
 
 
 

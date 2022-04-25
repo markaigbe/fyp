@@ -32,10 +32,6 @@ router.get('/userValid', verifyJWT, (req,res)=>{
   res.json({user: req.body.username})
 })
 
-router.delete('/logout', (req,res)=>{
-  res.json({auth: false, message: 'user logged out'})
-})
-
 // submit users to db
 router.post('/register', (req,res) =>{
 
