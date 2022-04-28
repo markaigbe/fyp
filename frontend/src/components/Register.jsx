@@ -14,6 +14,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 const Register = () => {
     // fill with default data to prevent server crash
     const [regUsername, setRegUsername] = useState('')
+    const [regEmail, setRegEmail] = useState('')
     const [regPassword, setRegPassword] = useState('')
     const submitUser = (event) => {
         event.preventDefault()
@@ -22,14 +23,20 @@ const Register = () => {
             method: "POST",
             data: {
                 username: regUsername,
+                email: regEmail,
                 password: regPassword,
             },
             withCredentials: true,
             url: 'http://localhost:8000/users/register'
         })
         .then(res => {
-            if(res.data){
-                alert('Successfuly Registered')
+            console.log(res.data);
+            if(res.data === 'user already exists'){
+                alert('User already exists')
+                window.location.href = '/'   
+            }
+            else{
+                alert('Successfully registered')
                 window.location.href = '/login'
             }
         })
@@ -60,6 +67,16 @@ const Register = () => {
                     onChange={(e) => setRegUsername(e.target.value)}
                     type='text'
                     /><br />
+
+
+                    <TextField
+                    id="email"
+                    label="email"
+                    value={regEmail}
+                    onChange={(e) => setRegEmail(e.target.value)}
+                    type='email '
+                    /><br />
+
 
                     <TextField
                     id="password"

@@ -6,6 +6,7 @@
     "start": "set DEBUG=BACKEND:* & nodemon ./bin/www"
   },
   "dependencies": {
+    "async-handler": "^0.0.3",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.1",
     "concurrently": "^7.0.0",
@@ -15,6 +16,7 @@
     "express": "~4.16.1",
     "express-flash": "^0.0.2",
     "express-session": "^1.17.2",
+    "forever": "^4.0.3",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "jsonwebtoken": "^8.5.1",

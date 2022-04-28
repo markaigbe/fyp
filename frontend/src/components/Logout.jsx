@@ -10,7 +10,7 @@ const Logout = () => {
                 "x-access-token": localStorage.removeItem("token")
             }})
             .then(res => {
-                window.location.href = '/'
+                window.location.href = '/login'
                 console.log(res);
             })
             .catch(error =>{
@@ -20,7 +20,7 @@ const Logout = () => {
 
     return (
         <div>
-            <Button variant='contained' color='secondary' onClick={logoutUser}>
+            <Button variant='outlined' color='primary' onClick={logoutUser}>
               Logout
             </Button>
         </div>

@@ -1,14 +1,32 @@
 import React from 'react'
 import TextField from '@mui/material/TextField'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
+import Axios from 'axios'
+import PostAddIcon from '@mui/icons-material/PostAdd';
+import Avatar from '@mui/material/Avatar';
 
 
 const Post = () => {
-  const [title, setTitle] = useState('empty')
-  const [content, setContent] = useState('empty')
+  const [user, setUser] = useState(null)
+  const [title, setTitle] = useState('')
+  const [content, setContent] = useState('')
+
+  useEffect(() =>{
+    Axios.get('http://localhost:8000/users/userValid', {
+        headers: {
+            "x-access-token": localStorage.getItem("token")
+        }})
+        .then(res => {
+            setUser(res.data);
+            console.log(res.data.user.username)
+        })
+        .catch(error =>{
+            console.log(error);
+        })
+    }, [setUser])
 
   const submitPost = (e) => {
     // testing if connected to express route
@@ -32,10 +50,23 @@ const Post = () => {
     })
   }
 
+  const cancelPost = () =>{
+    window.location.href = '/homePage'
+  }
+
   return (
+    <div>
+    <div className='abovePostContent'></div>
+    <Avatar sx={{ ml:50, mb: -15, bgcolor: '#ff833a' }}>
+          <PostAddIcon />
+    </Avatar>
     <div className='post'>
-        <Typography variant="h3" color="initial" id='submitPostTitle'>Create a Post</Typography>
-          id="title"
+
+    <Typography mt={7} mb={0} variant="h3" color='black'>
+      {user ?<Typography variant="h5" color="initial" id='submitPostTitle'>[{user.user.username}] Create a Post</Typography> : 'Load Username'}
+    </Typography>
+    
+        <TextField id="title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder={'Title'}
@@ -52,8 +83,14 @@ const Post = () => {
           
         /><br />
         <Button variant="outlined" color="primary" id='submitPost' onClick={submitPost}>
-          Submit post
+          Submit
         </Button>
+
+        <Button variant="outlined" color="primary" id='cancelPost' onClick={cancelPost}>
+          Cancel 
+        </Button>
+        
+    </div>
     </div>
   )
 }

@@ -7,6 +7,8 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import Page404 from "./components/Page404";
 import Post from "./components/Post";
+import Comment from "./components/Comment";
+import ShowComments from "./components/ShowComments";
 
 
 
@@ -24,6 +26,9 @@ function App() {
           <Route exact={true}  path="/login" element={<Login />} />
 
           <Route exact={true}  path="/post" element={<Post />} />
+          <Route exact={true}  path="/showComments" element={<ShowComments />} />
+          <Route exact={true}  path="/comment" element={<Comment />} />
+
 
           {/* 404 page */}
           <Route path='*' exact={true} element={<Page404 />} />

@@ -3,25 +3,34 @@ const Schema = mongoose.Schema;
 
 // new user schema for mongo
 const UserSchema = new Schema({
-  // _id: user,
   username: {
     type: String,
-    default: "",
     required: true,
     unique: true
   },
+  email: {
+    type: String,
+    required: true
+  },
   password: {
     type: String,
-    default: "",
     required: true
   },
   date : {
     type: Date,
     default: Date.now()
-  }
+  },
+  role:{
+    type: String,
+    default: 'user'
+  },
+  posts:[{
+    type: Schema.Types.ObjectId,
+    ref: 'post'
+  }]
 
 }, {collection: 'users'})
 
-
-
-module.exports = User = mongoose.model('user', UserSchema);
+// creating a model called user passing the userSchemas params
+const User = mongoose.model('user', UserSchema);
+module.exports = {User}

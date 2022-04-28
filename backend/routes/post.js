@@ -1,33 +1,16 @@
 const express = require('express')
 const router = express.Router()
-const postModel = require('../models/postModel')
+// using post controller
+const {submitPost, getMyPost, updatePost, deletePost, getAllPosts} = require('../controllers/post')
+const {protect} = require('../middleware/auth')
 
-
-router.post('/submit', async (req,res) =>{
-    const Post = new postModel({
-        title: req.body.title,
-        content:req.body.content
-    })
-    const newPost = await Post.save()
-    console.log('new post created: ' + newPost)
-    res.send({title: req.body.title, content: req.body.content})
-})
-
-router.get('/getPosts', (req,res) =>{
-    postModel.find({}, function(err, posts) {
-        var postMap = {};
-    
-        posts.forEach(function(post) {
-            postMap[post.title] = post;
-        });
-    
-        res.send(postMap);  
-      });
-})
-
-router.get('/', async (req,res) =>{
-   res.send('hello')
-})
+// calling controllers and assinging a route function and path
+// appliying auth.js middleware to ensure each post request requires a authorised user
+router.post('/submit', submitPost)
+router.get('/getMyPost', getMyPost)
+router.get('/getAllPosts', getAllPosts)
+router.put('/updatePost' ,updatePost)
+router.delete('/deletePost/:id', deletePost)
 
 
 module.exports = router;

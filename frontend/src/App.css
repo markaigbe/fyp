@@ -1,11 +1,56 @@
-.Register, .Login, .Homepage{
-  height: 1002px;
+.Register, .Login, .Homepage, .comment{
+  height: 1050px;
   width: auto;
   background-image: url('../src/images/singapore-background-30823-31548-hd-wallpapers.jpg')
 }
 
+#postList{
+  background-color: whitesmoke;
+  overflow: scroll;
+  height: 90%;
+}
+
+#commentList{
+  background-color: whitesmoke;
+  overflow: scroll;
+  height: 500px;
+  width: 60%;
+  margin-left: 20%;
+}
+
+#commentContainer{
+  background-color: white;
+  padding: 5%;
+  border-radius: 2%;
+}
+
+#commentHeader{
+  margin-bottom: 3%;
+}
+
+#submitPost{
+  margin-top: 50px;
+  margin-left: 62.5%;
+}
+
+#submitPostTitle{
+  margin-bottom: 30px;
+  margin-top: -40px;
+}
+
+.post{
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 1%;
+  height: 400px;
+  width: 50%;
+  padding-top: 8%;
+  margin-left: 20%;
+  padding-left: 5%;
+}
+
 .test{
-  border: 2px solid black;
+  border: 2px solid white;
   border-radius: 2%;
   margin-top: 8%;
   margin-right: 5%;
@@ -18,24 +63,13 @@
   margin-bottom: -69%;
 }
 
-.post{
-  background-color: whitesmoke;
-  border: 1px solid black;
-  height: 85%;
-  margin-top: -7px;
-  width: 102%;
-  margin-left: -10px;
-  padding-left: 15%;
-  padding-top: 15%;
-}
-
 #title, #content{
   width: 700px;
-
+  display: flex;
 }
 
 .test1{
-  border: 2px solid black;
+  border: 2px solid white;
   border-radius: 1%;
   padding-left: 12px;
   padding-right: 15px;
@@ -45,27 +79,46 @@
 }
 
 .LogoutButton{
-  margin-left: 88%;
-  margin-bottom: -5%;
-  margin-top: -5%;
+
+}
+
+#comment{
+  width: 500px;
+}
+
+#cancelPost{
+  margin-top: 6.3%;
+}
+
+#cancelComment{
+  margin-top: 6%;
+}
+
+#postItem{
+  border: 1px solid black;
+  border-radius: 1%;
+  margin-bottom: 5px;
 }
 
 .container{
-  background-color: aliceblue;
+  background-color: white;
   opacity: 100%;
   padding: 10px;
-  border: solid 5px;
+  border: solid 5px white;
   border-radius: 2%;
-  border-color: aliceblue;
 }
 
 .aboveContainer{
   padding-bottom: 10rem;
 }
 
+.abovePostContent{
+  padding-bottom: 10rem;
+}
+
 nav{
   background-color: rgba(175, 252, 252, 0.5);
-  border: 1px solid black;
+  border: 1px solid white;
 }
 
 li {
@@ -79,20 +132,19 @@ li {
   background-color: white;
 }
 
-.gridHeader, .gridFooter{
-  background-color: rgb(255, 255, 255);
+.gridHeader{
+  background-color: white;
   border: 1px solid black;
+  border-radius: 1%;
+}
+
+.gridFooter{
+  background-color: white;
+  border: 1px solid black;
+  border-bottom-right-radius: 5%;
+  border-bottom-left-radius: 5%;
+
 }
 .aboveMainContent{
   padding: 30px;
-}
-
-#submitPost{
-  margin-top: 50px;
-  margin-left: 62.5%;
-}
-
-#submitPostTitle{
-  margin-bottom: 30px;
-  margin-top: -40px;
 }

@@ -29,6 +29,7 @@ const Login = () => {
             url: 'http://localhost:8000/users/login'
         })
         .then(res => {
+            console.log(res.data);
             if(res.data.authenticated === false){
                 alert('invalid username/passoword')
                 setLoggedInStatus(false)
