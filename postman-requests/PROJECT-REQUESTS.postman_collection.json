@@ -1,0 +1,429 @@
+{
+	"info": {
+		"_postman_id": "3edff3c4-91c8-4d01-ac30-038322bd2741",
+		"name": "PROJECT-REQUESTS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getMyPost",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjk1OTNjNDg5MTQxMWYzNGU2NDkyMCIsImlhdCI6MTY1MTA5MjkzOSwiZXhwIjoxNjUxMTEwOTM5fQ.T8NBut2PcRPV0D9p74-h5VIaer3q4PZwOI9d6Ljb35I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/posts/getMyPost",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"posts",
+						"getMyPost"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOneUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjk1OTNjNDg5MTQxMWYzNGU2NDkyMCIsImlhdCI6MTY1MTA5MjkzOSwiZXhwIjoxNjUxMTEwOTM5fQ.T8NBut2PcRPV0D9p74-h5VIaer3q4PZwOI9d6Ljb35I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/users/getOneUser/62695e06441a92ad9efe1b03",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"getOneUser",
+						"62695e06441a92ad9efe1b03"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllUsers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjk1ZTA2NDQxYTkyYWQ5ZWZlMWIwMyIsImlhdCI6MTY1MTA3NDMzOSwiZXhwIjoxNjUxMDkyMzM5fQ.JSn4A3R-9VBlQIGz-WQ7V-1YVpuQr5mHGuuXOSpWEbI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/users/getUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"getUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "checkIsUserValid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/users/userValid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"userValid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllPosts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/posts/getAllPosts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"posts",
+						"getAllPosts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllComments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/comments/getAllComments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"comments",
+						"getAllComments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registerUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "mark221321313",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "mark@mark.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "mark",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loginUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"mark\",\n    \"email\": \"hello@hello.com\",\n    \"password\": \"world\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/users/login?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"login"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "submitPost",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjkxM2VkZTk1Zjk1NzZlZTkwNjQ0MiIsImlhdCI6MTY1MTA5NDk0NCwiZXhwIjoxNjUxMTEyOTQ0fQ.dAOhSzIndAHZc3mtnluZ59u7BPcxPzaT05899QmAXl0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"He came here a long time ago.\",\r\n    \"content\": \"Why me?\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/posts/submit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"posts",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "submitComments",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"new comment 3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/comments/submit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"comments",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updatePost",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "updatedPost",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/posts/updatePost/62686840b44bc103727e201f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"posts",
+						"updatePost",
+						"62686840b44bc103727e201f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletePost",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjk1ZTA2NDQxYTkyYWQ5ZWZlMWIwMyIsImlhdCI6MTY1MTA3NzgyMywiZXhwIjoxNjUxMDk1ODIzfQ.JRchflY7HNXvRsIk7LAvZVZqOjFAd-rKNB-GrPSBv8c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/posts/deletePost/626a3b63a0328faadd1fb2d7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"posts",
+						"deletePost",
+						"626a3b63a0328faadd1fb2d7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteComment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjk1ZTA2NDQxYTkyYWQ5ZWZlMWIwMyIsImlhdCI6MTY1MTA3NzgyMywiZXhwIjoxNjUxMDk1ODIzfQ.JRchflY7HNXvRsIk7LAvZVZqOjFAd-rKNB-GrPSBv8c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/comments/deleteComment/626a3b6ba0328faadd1fb2d9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"comments",
+						"deleteComment",
+						"626a3b6ba0328faadd1fb2d9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUser",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/users/deleteUser/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"deleteUser",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
