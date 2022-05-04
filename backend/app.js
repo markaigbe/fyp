@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
 const methodOverride = require('method-override')
-require('dotenv').config({path: '/Users/markaigbe/College/Osaren_Project/.env'})
+require('dotenv').config({path: 'G:/College/Year4/Osaren_Project/.env'})
 require('../backend/bin/connMongo')
 
 

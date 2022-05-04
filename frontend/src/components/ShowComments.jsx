@@ -60,7 +60,7 @@ const ShowComments = () => {
             <Typography variant="h4" color="initial" id='commentHeader'> All Comments: </Typography>
             <div id='commentList'>
             {comments.sort(((a, b) => b-a)).map((val, key) =>{
-            return <div id='postItem' key={key}> <h4>text: {val.text}</h4><h6>posted by: {user.user.username}</h6> 
+            return <div id='postItem' key={key}> <h4>Comment: {val.text}</h4><h6>posted by: {user.user.username}</h6> 
 
                 {/* <button onClick={() => deleteComment(val._id)}> delete </button> */}
             </div> 

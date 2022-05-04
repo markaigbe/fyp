@@ -22,7 +22,7 @@ const Page404 = () => {
                     </Avatar>
                     Error 404: Page not found
                 </Typography>
-                <Typography variant="body1" color="initial">Redirect to <Link to='/'>Login</Link></Typography>
+                <Typography variant="body1" color="initial">Redirect to <Link to='/login'>Login</Link></Typography>
             </Grid>
         </Container>
 </div>
